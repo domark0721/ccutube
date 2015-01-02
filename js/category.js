@@ -25,7 +25,7 @@ $(document).ready( function(){
 		    	console.log(video);
 		    	var videoHtml ="";
 		    	videoHtml +=  "<li class=\"videoItem\" ><div class=\"videoCard\"><div class=\"video-img\" ><img src=\"http://img.youtube.com/vi/"+video._source.id+"/mqdefault.jpg\"></div>";
-		    	videoHtml += "<div class=\"video-info\"><a href=\"video.php?vid="+video._source.id+"\">"+video._source.title+"</a><span class=\"video-info-author\">by "+video._source.author+"</span>";
+		    	videoHtml += "<div class=\"video-info\"><a href=\"video.php?vid="+video._id+"\">"+video._source.title+"</a><span class=\"video-info-author\">by "+video._source.author+"</span>";
 		      	videoHtml += "<span><i class=\"fa fa-eye\"> "+video._source.viewCount+"</i><i class=\"fa fa-clock-o\"> "+video._source.duration+"</i><i class=\"fa fa-cloud-upload\"> "+video._source.published+"</i></span>";
 		     	videoHtml += "<p class=\"video-content\">"+"put content here"+"</p></div></div></li>";
 		    	

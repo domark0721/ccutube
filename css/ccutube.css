@@ -34,9 +34,10 @@ html[xmlns] .clearfix {
 .headerBar {
 	background-color: #2F3F73;
 	text-align: center;
-	height:35px;
+	height:40px;
 	margin: 0px;
 	padding: 10px;
+	margin-bottom: 1em;
 }
 
 #headerContainer{
@@ -51,9 +52,17 @@ html[xmlns] .clearfix {
 
 #headerLogo{
 	float: left;
-	font-size:25px;
+	font-size:35px;
 	color: #fff;
 	margin-left: 10px;
+}
+
+#headerLogo a {
+	text-decoration: none;
+}
+
+#headerLogo a:visited{
+	color: #FFF;
 }
 
 #headerLogo span{
@@ -68,14 +77,14 @@ html[xmlns] .clearfix {
 #headerBar-input{
 	width: 300px;
 	font-size: 20px;
-	padding: 4px 12px;
+	padding: 6px 12px;
 	border: 0px;
 	border-radius: 50px;
 }
 
 #headerBar-submit{
 	font-size: 18px;
-	padding: 6px;
+	padding: 5px 8px;
 	background-color: transparent;
 	border: 2px solid #fff;
 	color: #fff;
@@ -93,6 +102,10 @@ html[xmlns] .clearfix {
 #headerBar-nav li{
 	display: inline-block;
 	padding:  5px;
+}
+
+#headerBar-nav li:hover{
+	background-color: #AA5038;
 }
 
 #headerBar-nav li a{
@@ -115,7 +128,6 @@ html[xmlns] .clearfix {
 }
 
 #rightWrap{
-
 	float:left ;
 	width: 85%;
 }
@@ -184,12 +196,12 @@ html[xmlns] .clearfix {
 	display: block;
 	color: #13476f;
 	text-decoration: none;
-	min-height: 42px;
+	min-height: 63px;
 }
 
 .video-info span{
 	display: block;
-	font-size:15px;
+	font-size:12px;
 	color: #B8B8B8;
 }
 

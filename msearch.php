@@ -41,7 +41,7 @@
 <?php
 if(isset($_GET["gogo"])){
 	//echo "hi";
-	require '../vendor/autoload.php';
+	require 'vendor/autoload.php';
 	include 'mongodb.php';
 	$keyword = $_GET["keyword"];
 	$category = $_GET["category"];
@@ -197,6 +197,7 @@ if(isset($_GET["gogo"])){
 			//print_r($mongoQuery);
 
 			$mon = $collection->find($mongoQuery);
+			print_r($mon);
 			//$items = $mon->count();
 			
 			$pages = ceil($results['hits']['total']/$per); //計算總頁數

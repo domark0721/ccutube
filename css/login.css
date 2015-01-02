@@ -1,0 +1,39 @@
+.card{
+	margin: 40px auto;
+	background-color: #fff;
+	width:50%;
+	max-width: 480px;
+	padding: 2em 1em;
+}
+
+.stackForm{
+	text-align: center;
+}
+
+.stackForm label{
+	width: 25%;
+	display: inline-block;
+	font-size: 18px;
+}
+
+.stackForm input{
+	width: 50%;
+	border: 1px solid #B8B8B8;
+	margin-bottom:2em;
+	font-size: 18px;
+	padding: 4px;
+}
+
+.stackForm button{
+	background-color: #AA5038;
+	color: #fff;
+	border: 0;
+	padding: 5px 10px;
+	font-size: 18px;
+}
+
+.tipstitle {
+	text-align: center;
+	font-size: 18px;
+
+

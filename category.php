@@ -1,14 +1,14 @@
 <?php
 
 ?>
-
+<!doctype html>
 <html>
 <head>
-	<meta charser="UTF-8">
+	<meta charser="utf-8">
 	<?php
 		require("css_common.php");
 	?>
-	<title>CCUtube - Category</title>
+	<title>Category - CCUtube</title>
 </head>
 
 <body>
@@ -52,6 +52,7 @@
 		require("js_common.php");
 	?>
 	<script src="js/category.js"></script>
+
 </body>
 
 </html>

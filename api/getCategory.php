@@ -1,5 +1,6 @@
 <?php
 	require '../vendor/autoload.php';
+	require '../mongodb.php';
 	$esClient = new Elasticsearch\Client();
 
 	if(!empty(($_GET['category']))) {

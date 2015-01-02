@@ -1,5 +1,6 @@
 {
 	"require":{
-		"elasticsearch/elasticsearch":"~1.0"
+		"elasticsearch/elasticsearch":"~1.0",
+		"parse/php-sdk":"1.0.*"
 	}
 }
