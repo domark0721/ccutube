@@ -1,16 +1,16 @@
 <?php
-require 'vendor/autoload.php';
-use Parse\ParseClient;
-use Parse\ParseUser;
-use Parse\ParseSessionStorage;
-ParseClient::initialize('DINPQbvlPessEzSCBOhW83NkxtDIniaWflDtVyav', 'pJnetpTKF1dNmyPOpwzXyVI73oIWNTq8UVNnA3AL', 'tC1QePDQzK5j4sqZMwaxyH1ef8nj0Fgpw5drnh1x');
-session_start();
-ParseClient::setStorage( new ParseSessionStorage() );
+    require 'vendor/autoload.php';
+    use Parse\ParseClient;
+    use Parse\ParseUser;
+    use Parse\ParseSessionStorage;
+    ParseClient::initialize('DINPQbvlPessEzSCBOhW83NkxtDIniaWflDtVyav', 'pJnetpTKF1dNmyPOpwzXyVI73oIWNTq8UVNnA3AL', 'tC1QePDQzK5j4sqZMwaxyH1ef8nj0Fgpw5drnh1x');
+    session_start();
+    ParseClient::setStorage( new ParseSessionStorage() );
 
-$currentUser = ParseUser::getCurrentUser();
+    $currentUser = ParseUser::getCurrentUser();
 ?>
 <header class="headerBar">
-	<div id="headerContainer">
+      <div id="headerContainer">
 	<div id="headerLogo">
   	<a href="index.php"><span >CCU</span>tube</a>
 	</div>
@@ -23,7 +23,7 @@ $currentUser = ParseUser::getCurrentUser();
 <?php
 if ($currentUser) {
 ?>
-    <li><a href="user.php"><i class="fa fa-power-off"> <?php echo $currentUser->get("username");?></i></a></li>
+    <li><a href="user.php"><i class="fa fa-user"> <?php echo $currentUser->get("username");?></i></a></li>
 <?php 
 } else {
 ?>

@@ -16,23 +16,31 @@
 	<?php
 		require("header.php");
 	?>
-</body>
 	<main class="main-wrapper clearfix">
 	<div id="leftWrap">
 		<div id="userpic"></div>
-		<div id="username">Mark</div>
+		<div id="username"><?php echo $currentUser->get("username");?></div>
 	       <ul id="categoryNav">
-		<li><a href="#" cate="myVideo" class="active">我的影片</a></li>
-		<li><a href="#" cate="myLater">稍候觀看</a></li>
-		<li><a href="#" cate="myHistory">觀看紀錄</a></li>
-		<li><a href="#" cate="myLike">喜歡的影片</a></li>
-		<li><a href="#" cate="upload">上傳影片</a></li>		
+		<li><a href="#" id="myVideo" class="active">我的影片</a></li>
+		<li><a href="#" id="myLater">稍候觀看</a></li>
+		<li><a href="#" id="myHistory">觀看紀錄</a></li>
+		<li><a href="#" id="myLike">喜歡的影片</a></li>
+		<li><a href="#" id="upload">上傳影片</a></li>		
 	        </ul>
 	</div>
 
 	<div id="rightWrap">
+	      <div id="videolist-container">
+		      	<ul id="videolist">    
+		      	</ul>
+	      </div>	
 	</div>
-
 	</main>
+
+	<?php
+		require("js_common.php");
+	?>
+	<script src="js/user.js"></script>
+</body>
 
 </html>

@@ -1,5 +1,5 @@
 $(document).ready( function(){
-
+	//first time enter this page (load default category)
 	getCategoryVideo("animals");
 
 	$("#categoryNav a").click(function(e){

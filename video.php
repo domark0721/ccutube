@@ -1,14 +1,23 @@
 <?php
+	require 'vendor/autoload.php';
+	use Parse\ParseClient;
+	use Parse\ParseQuery;
+	ParseClient::initialize('DINPQbvlPessEzSCBOhW83NkxtDIniaWflDtVyav', 'pJnetpTKF1dNmyPOpwzXyVI73oIWNTq8UVNnA3AL', 'tC1QePDQzK5j4sqZMwaxyH1ef8nj0Fgpw5drnh1x');	
 	include 'mongodb.php';
+
 	$vid = $_GET['vid'];
-	echo $vid;
+	// echo $vid;
 	$mongoQuery = array(
 	 	'_id' => new MongoId($vid)
  	);
 
 	//print_r($mongoQuery);
  	$videoInfo = $collection -> findOne($mongoQuery);
- 	//print_r($mon);
+
+ 	// get video like count
+ 	$query = new ParseQuery("Like");
+	$query->equalTo("vid", $vid);
+	$videoLikes = count($query->find());
 ?>
 
 <!doctype html>
@@ -49,8 +58,8 @@
 			<div class="viewcount">觀看次數：<?php echo number_format($videoInfo['viewCount']); ?></div>
 			 
 			<div class="control">
-				<div class="video-button">1,223 Like</div>
-				<div class="video-button">稍候觀看</div>
+				<div class="video-button" id="likeBtn" vid="<?php echo $videoInfo['_id'];?>"><span id="likeCount"><?php echo $videoLikes ?></span> Like</div>
+				<div class="video-button" id="laterBtn"  vid="<?php echo $videoInfo['_id'];?>"><span id="laterWatch">稍候觀看</span></div>
 			</div>
 		</div>
 
@@ -68,6 +77,10 @@
 		<div id="relatedBar">
 		</div>
 	</div>
+	<?php
+		require("js_common.php");
+	?>	
+	<script src="js/video.js"></script>
 </body>
 
 </html>
