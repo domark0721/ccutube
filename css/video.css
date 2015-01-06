@@ -39,6 +39,10 @@
 	border: 0;
 }
 
+#video video {
+	width: 100%;
+}
+
 #videoInfo .title{
 	font-size: 30px;
 	margin-bottom:20px;

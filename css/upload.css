@@ -1,0 +1,57 @@
+#uploadForm{
+	/*text-align: center;*/
+}
+.main-wrapper{
+	width: 40%;
+	max-width: 1200px;
+}
+.videoUploadWrapper {
+	margin: 10px 10px 30px 10px;
+	text-align: center;
+}
+
+#uploadVideoArea {
+	margin: 0 auto;
+	border: 3px solid blue;
+	width: 400px;
+	height: 200px; 
+}
+
+#uploadVideoArea.dragIn{
+	border:3px solid red;
+}
+
+.formDisplayCSS{
+	font-size: 18px;
+	padding: 4px;
+	border: 1px solid #B8B8B8;
+	margin-bottom:2em;
+}
+#uploadForm input{
+	width: 50%;
+}
+
+#author{
+	width: 25% !Important;
+	background-color: rgba(173, 175, 178, 0.3);
+}
+
+#uploadForm label{
+	width: 25%;
+	display: inline-block;
+	font-size: 20px;
+	vertical-align: top;
+	padding-top: 2px;
+}
+
+#uploadForm button{
+	background-color: #AA5038;
+	color: #fff;
+	border: 0;
+	padding: 5px 10px;
+	font-size: 18px;
+}
+
+.submitBtn{
+	text-align: center;
+}

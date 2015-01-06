@@ -2,6 +2,7 @@ $(document).ready(function(){
 
 	$("#likeBtn").click(function(e){
 		var getVid = $(this).attr("vid");
+		$(".loading").show();
 		setLike(getVid);
 	});
 	$("#laterBtn").click(function(e){
@@ -20,6 +21,7 @@ $(document).ready(function(){
 			if(jdata.result=="ok"){
 				totalLike = jdata.totalLike; 
 				$("#likeCount").html(totalLike);
+				$(".loading").hide();
 			}
 			console.log(jdata);
 		})

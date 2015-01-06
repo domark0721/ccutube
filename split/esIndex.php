@@ -169,7 +169,7 @@
 
 			// insert to Mongo
 			$collection->insert($json_doc);
-                                          $newInsertedId = (string) $json_doc['_id'];
+			$newInsertedId = (string) $json_doc['_id'];
 
 			$indexData = array(
 				'index'=>'youtube',

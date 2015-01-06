@@ -19,22 +19,15 @@
 </body>
 	<main class="main-wrapper clearfix">
 	<div class="videoUploadWrapper">
-		<p>Please drap video here</p>
-		<div id="uploadVideoArea"  draggable="true">
+		<div id="uploadVideoArea-control">
+			<p id="upload"
 		</div>
-		<div id="uploadVideoName"></div>
-		<div id="uploadVideoProgress">0%</div>
 	</div>
 	<div id="uploadInfo-control">
-		<form id="uploadForm" method="POST" action="api/saveFile.php">
-			<div>
-			<label for="author">video ID</label>
-				<input class="formDisplayCSS" id="videoIdShow" name="videoIdShow" disabled type="text">
-				<input type="hidden" id="videoId" name="videoId">
-			</div>
+		<form id="uploadForm" method="GET" action="">
 			<div>
 			<label for="author">上傳者</label>
-				<input class="formDisplayCSS" id="author" name="author" disabled value="<?php echo $currentUser->get('username');?>">
+				<input class="formDisplayCSS" id="author" name="author" disabled="">
 			</div>
 			<div>
 			<label for="title">標題</label>
@@ -44,6 +37,7 @@
 			<label for="category">類別</label>
 				<select  class="formDisplayCSS" id="category" name="category">
 					<option selected value="">==Category==</option>
+					<option value="NULL">All</option>
 					<option value="Animals">Animals</option>
 					<option value="Autos">Autos</option>
 					<option value="Comedy">Comedy</option>
@@ -69,8 +63,5 @@
 		</form>
 	</div>
 	</main>
-	<?php
-		require("js_common.php");
-	?>
 	<script src="js/upload.js"></script>
 </html>

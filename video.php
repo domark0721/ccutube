@@ -18,6 +18,9 @@
  	$query = new ParseQuery("Like");
 	$query->equalTo("vid", $vid);
 	$videoLikes = count($query->find());
+
+
+
 ?>
 
 <!doctype html>
@@ -47,8 +50,21 @@
 	<main class="main-wrapper clearfix">
 	<div id="leftVideo">
 		<div id="video">
+		<?php
+			if(empty($videoInfo['isCCUtube'])) {
+		?>
 			<iframe src="http://www.youtube.com/embed/<?php echo $videoInfo['id'];?>">
 			</iframe>
+		<?php
+			} else {
+		?>
+			<video controls>
+			  <source src="<?php echo 'uploads/video/'. $videoInfo['id'] .'.mp4';?>" type="video/mp4">
+			  Your browser does not support the video tag.
+			</video>
+		<?php
+			}
+		?>
 		</div>
 
 		<div id="videoInfo" class="infocard">
@@ -60,6 +76,7 @@
 			<div class="control">
 				<div class="video-button" id="likeBtn" vid="<?php echo $videoInfo['_id'];?>"><span id="likeCount"><?php echo $videoLikes ?></span> Like</div>
 				<div class="video-button" id="laterBtn"  vid="<?php echo $videoInfo['_id'];?>"><span id="laterWatch">稍候觀看</span></div>
+				<span class="loading" style="display:none;"><img src="img/loader.gif"></span>
 			</div>
 		</div>
 
@@ -69,7 +86,7 @@
 		</div>
 
 		<div class="infocard">
-		<div class="fb-comments" data-href="http://localhost/youtube/video.php?vid=549605dcacfc62f259ac23ef" data-numposts="5" data-width="100%" data-colorscheme="light"></div>
+		<div class="fb-comments" data-href="http://localhost/youtube/video.php?vid=<?php echo $vid;?>" data-numposts="5" data-width="100%" data-colorscheme="light"></div>
 		</div>
 	</div>
 

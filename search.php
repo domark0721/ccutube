@@ -90,10 +90,16 @@
 	      	<ul id="videolist">
 			<?php
 				foreach($mon as $doc){
-				   echo ('<li class="videoItem" ><div class="videoCard"><div class="video-img" ><img src="http://img.youtube.com/vi/'. $doc['id']. '/mqdefault.jpg"></div>');
-			    	   echo ('<div class="video-info"><a href="video.php?vid='. $doc['_id'].'">'. $doc['title'] .'</a><span class="video-info-author">by ' .$doc['author']. '</span>');
-			      	   echo ('<span><i class="fa fa-eye"> '.number_format($doc['viewCount']).'</i><i class="fa fa-clock-o"> '.$doc['duration'].'</i><i class="fa fa-cloud-upload"> '.$doc['published'].'</i></span>');
-			     	   echo ('<p class="video-content">"+"put content here"+"</p></div></div></li>');
+					if(empty($doc['isCCUtube'])) {
+						$videoImg = "http://img.youtube.com/vi/". $doc['id']. "/mqdefault.jpg";
+					} else {
+						$videoImg = "uploads/screenshot/" . $doc['id'] . ".jpg";
+					}
+
+					echo ('<li class="videoItem" ><div class="videoCard"><div class="video-img" ><img src="'. $videoImg. '"></div>');
+					echo ('<div class="video-info"><a href="video.php?vid='. $doc['_id'].'">'. $doc['title'] .'</a><span class="video-info-author">by ' .$doc['author']. '</span>');
+					echo ('<span><i class="fa fa-eye"> '.number_format($doc['viewCount']).'</i><i class="fa fa-clock-o"> '.$doc['duration'].'</i><i class="fa fa-cloud-upload"> '.$doc['published'].'</i></span>');
+					echo ('<p class="video-content">"+"put content here"+"</p></div></div></li>');
 				}		
 			?>
 	      	</ul>

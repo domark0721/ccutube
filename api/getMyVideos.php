@@ -13,12 +13,13 @@
 	$user = ParseUser::getCurrentUser();
 
 	//get like videos 
-	$query = new ParseQuery("Like");
+	$query = new ParseQuery("userVideo");
 	$query->equalTo("user", $user);
-	$userLike = $query->ascending("createdAt")->find();
+	//query.ascending("createdAt");
+	$userLike = $query->find();
+
 	//get from mongo
 	$ids = array();
-	
 	foreach($userLike as $value){
 	 	$ids[] = new MongoId($value->vid);
 	 }
@@ -29,7 +30,7 @@
 	 		)
 	 	);
 	$mon = $collection -> find($mongoQuery);
-	//->sort(array('published' => -1))
+
 	//save to our array for api response
 	$videoList = array();
 	foreach($mon as $video){
@@ -39,7 +40,7 @@
 	$result = array(
 		"video" => $videoList
 	);
-	
+
 	echo json_encode($result);
 
 ?>

@@ -39,8 +39,8 @@
 	<div id="rightWrap">
 	     <ul id="howtoDisplay">
 	     	<li>order by</li>
-	     	<li><a>Title<a></li>
-	     	<li><a>Viewcount</a></li>
+	     	<li><a id="orderByDuration" href="#">Duration<a></li>
+	     	<li><a id="orderByViewcount" href="#">Viewcount</a></li>
 	     </ul>
 	      <div id="videolist-container">
 	      	<ul id="videolist">    
@@ -52,6 +52,7 @@
 		require("js_common.php");
 	?>
 	<script src="js/category.js"></script>
+	<script src="js/order.js"></script>
 
 </body>
 
