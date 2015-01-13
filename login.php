@@ -6,7 +6,7 @@ if(isset($_GET['signup'])){
 		echo "<script>alert(\"sign up failed\");</script>";
 	}
 }
-
+  $loginMsg=$_GET['login'];
 ?>
 <!doctype html>
 <html>
@@ -31,6 +31,7 @@ if(isset($_GET['signup'])){
 			<input id="userid" name="userid" type="text"><br>
 			<label for="userpwd">密碼</label>
 			<input id="userpwd" name="userpwd" type="password"><br>
+			<p> <?php if($loginMsg=="false"){echo "ID or password ERROR!!";}?></p>
 			<button type="submit">登入</button>
 		</form>
 	</div>

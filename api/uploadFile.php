@@ -13,9 +13,12 @@ $targetFile = $targetDir . $newFileName;
 if ( move_uploaded_file($file["tmp_name"], $targetFile) ) {
 	// screenshot
 	$screenshotPath = "../uploads/screenshot/" . $id . ".jpg";
-	shell_exec("../ffmpeg/ffmpeg -i $targetFile -deinterlace -an -ss 1 -t 00:00:01 -r 1 -y -vcodec mjpeg -f mjpeg $screenshotPath 2>&1");
+	shell_exec("../ffmpeg/ffmpeg -i $targetFile -deinterlace -an -ss 1 -t 00:00:10 -r 1 -y -vcodec mjpeg -f mjpeg $screenshotPath 2>&1");
 
-        echo $id;
+	$responseScreenshotPath = "uploads/screenshot/" . $id . ".jpg";
+	$response = array($id, $responseScreenshotPath);
+	echo json_encode($response);
+	// echo $id;
 } else {
         echo "error";
 }

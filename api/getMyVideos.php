@@ -11,7 +11,6 @@
 	session_start();
 	ParseClient::setStorage( new ParseSessionStorage() );
 	$user = ParseUser::getCurrentUser();
-
 	//get like videos 
 	$query = new ParseQuery("userVideo");
 	$query->equalTo("user", $user);
@@ -29,7 +28,7 @@
 	 		'$in' => $ids
 	 		)
 	 	);
-	$mon = $collection -> find($mongoQuery);
+	$mon = $collection -> find($mongoQuery)->sort(array('published' => -1));
 
 	//save to our array for api response
 	$videoList = array();

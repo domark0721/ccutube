@@ -13,11 +13,10 @@
 	$user = ParseUser::getCurrentUser();
 
 	//get like videos 
-	$query = new ParseQuery("Like");
+	$query = new ParseQuery("History");
 	$query->equalTo("user", $user);
 	$userLike = $query->descending("createdAt")->find();
 	
-	//get from mongo
 	$videoList = array();
 	foreach($userLike as $value){
 		$ids = "";

@@ -1,3 +1,4 @@
+<meta charset="utf-8">
 <link type="text/css" rel="stylesheet" href="css/ccutube.css">
 <link type="text/css" rel="stylesheet" href="css/normalize.css">
 <link rel="stylesheet" href="css/font-awesome.min.css">

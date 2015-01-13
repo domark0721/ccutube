@@ -13,45 +13,38 @@
 	ParseClient::setStorage( new ParseSessionStorage() );
 	$user = ParseUser::getCurrentUser();
 
-	$author = $user->username;
+	$vid = $_POST['videoId'];
 	$title = $_POST['title'];
 	$category = $_POST['category'];
 	$content = $_POST['content'];
-	$id = $_POST['videoId'];
+	// echo $vid;
 
-	$published = date('Y-m-d H:i:s');
+	//update to mongo
+	$mongoid = array('_id' => new MongoId($vid));
+	$updateCol = array('$set' => array('title' => $title, 'category' => $category, 'content' =>$content));
+	$collection->update(
+		$mongoid, 
+		$updateCol
+		); 
 
+	//update to elasticsearch
 	$json_doc = array(
-		"id" =>(string) $id,
 		"title" => $title,
-		"published" => $published,
-		"content" => $content,
-		"category" =>$category,
-		"duration" => (int)0, // check ffmpeg function
-		"favoriteCount" => (int)0,
-		"viewCount" => (int)0,
-		"author" => $author,
-		"keyword" => "",
-		"uid" => "",
-		"isCCUtube" => true
+		"category" => $category,
+		"content" => $content
 	);
-	$collection->insert($json_doc); //insert to mongodb
 
-	//build elasticsearch index
-	$newInsertedId = (string) $json_doc['_id'];
 	$indexData = array(
 		'index'=>'youtube',
 		'type'=>'utubedata',
-		'id'=> $newInsertedId,
-		'body'=>$json_doc
+		'id'=> $vid,
+		'body'=>array(
+			'doc' => $json_doc 
+			)
 		);
-	$ret = $esClient->index($indexData); 
 
-	// parse: user video  record
-	$userVideo = new ParseObject("userVideo");
-	$userVideo->set("vid", $newInsertedId);
-	$userVideo->set("user", $user);
-	$userVideo->save();
+	$ret = $esClient->update($indexData);
+
 
 	// redirect to user page
 	header("location: ../user.php");

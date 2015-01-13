@@ -1,0 +1,46 @@
+#content{
+	height: 100px;
+}
+
+#video {
+	position: relative;
+	padding-bottom: 44.25%;
+	padding-top: 25px;
+	height: 0;
+	left: 15%;
+}
+
+#video iframe {
+	position: absolute;
+	top:	0;
+	left: 0;
+	width: 70%;
+	height: 90%;
+	border: 0;
+}
+
+#video video {
+	width: 70%;
+}
+
+#btnWrap{
+	text-align: center;
+}
+
+#btnWrap div{
+	display: inline-block;
+	margin: 0 auto;
+	padding: 0 25px;
+}
+
+#btnWrap input{	
+}
+
+#btnWrap button , #btnWrap .backDelete{
+	background-color: #AA5038;
+	color: #fff;
+	border: 0;
+	font-size: 18px;	
+	padding: 7px 12px;
+	text-decoration: none;
+}

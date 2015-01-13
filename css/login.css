@@ -35,5 +35,10 @@
 .tipstitle {
 	text-align: center;
 	font-size: 18px;
+}
 
-
+#loginForm p{
+	color: red;
+	font-size: 20px;
+	margin-top: -10px;
+}

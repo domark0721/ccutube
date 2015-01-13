@@ -1,0 +1,27 @@
+#howtoDisplay li a{
+	padding: 0 10px;
+
+}
+
+#howtoDisplay li a.orderActive{
+	color: red;
+	font-weight: 700;
+	cursor: default;
+}
+
+.clicked:hover {
+	background-color: #AA5038;
+	color:#fff !important;
+	border-radius: 10%;
+}
+
+#orderByDuration, #orderByViewcount{
+	color: #000;
+	font-weight: 400;
+	text-decoration: none;
+}
+
+.relatedLoader img{
+	display: block;
+	margin: 8em auto;
+}

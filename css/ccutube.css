@@ -156,6 +156,7 @@ html[xmlns] .clearfix {
 #categoryNav li a:hover, #categoryNav li a.active{
 	background-color:  #172556;
 	color: #fff;
+	transition: all 0.6s ease;
 }
 
 #howtoDisplay{
@@ -170,6 +171,7 @@ html[xmlns] .clearfix {
 }
 
 .videoItem {
+	position: relative;
 	display: inline-block;
 	margin: 6px 0px 6px 3%;
 	box-sizing: border-box;
@@ -181,9 +183,11 @@ html[xmlns] .clearfix {
 	box-shadow: 0 0 3px #ddd,0 0 0 3px transparent;
 	border-radius: 3px;
 	overflow: hidden;
+	min-height: 393px;
 }
 .videoCard:hover{
-	box-shadow: 0 0 3px 1px #D64D29;
+	transition: all 0.2s ease;
+	box-shadow: 0 0 3px 3px #D64D29;
 }
 .video-img img{
 	width: 100%;
@@ -197,6 +201,7 @@ html[xmlns] .clearfix {
 	color: #13476f;
 	text-decoration: none;
 	min-height: 63px;
+	font-size: 20px;
 }
 
 .video-info span{
@@ -214,3 +219,6 @@ html[xmlns] .clearfix {
 	padding-left: 10px;
 }
 
+.video-content {
+	font-size: 15px;
+}

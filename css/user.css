@@ -14,3 +14,29 @@
 	margin: 8px 0px;
 }
 
+.relatedLoader img{
+	display: block;
+	margin: 8em auto;
+}
+
+.modifyBtn{
+	position: absolute;
+	margin: 0;
+	top: 5px;
+	right: 10px;
+	padding: 4px 6px;
+	font-size: 20px;
+	background-color: #F76105;
+	transition: opacity 0.3s;
+	opacity: 0.7;
+	cursor: pointer;
+}
+
+.modifyBtn:hover{
+	opacity: 1;
+}
+
+.fontStyle{
+	color: #fff;
+	text-decoration: none;
+}

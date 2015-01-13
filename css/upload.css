@@ -9,16 +9,36 @@
 	margin: 10px 10px 30px 10px;
 	text-align: center;
 }
+.videoUploadWrapper p{
+	font-size:20px;
+}
 
-#uploadVideoArea {
+#uploadVideoProgress{
+	font-size: 20px;
+}
+/*#uploadVideoArea{
+	transition: all 0.5s ease;
 	margin: 0 auto;
-	border: 3px solid blue;
+	border: 3px solid #AAA838;
+	width: 400px;
+	height: 200px; 	
+}*/
+.uploadVideoBorder{
+	transition: all 0.5s ease;
+	margin: 0 auto;
+	border: 3px solid #AAA838;
 	width: 400px;
 	height: 200px; 
 }
 
 #uploadVideoArea.dragIn{
 	border:3px solid red;
+	transition: all 0.5s ease;
+}
+
+#uploadVideoArea img{
+	width:60%;
+	padding: 6px;
 }
 
 .formDisplayCSS{
@@ -31,13 +51,36 @@
 	width: 50%;
 }
 
-#author{
-	width: 25% !Important;
+.videoAuthorLeft{
+	float: left;
+	width:50%;
+
+}
+
+.videoIdRight{
+	float:right;
+	width:50%;
+}
+
+.id_author_inline{
+	width:30%;
+	display: inline-block;
+	font-size: 20px;
+	vertical-align: top;
+	padding-top: 2px;	
+}
+
+#author,  #videoIdShow{
+	width: 50% !Important;
 	background-color: rgba(173, 175, 178, 0.3);
 }
 
-#uploadForm label{
-	width: 25%;
+#category{
+	background-color: #fff;
+}
+
+.belowInfo{
+	width: 15%;
 	display: inline-block;
 	font-size: 20px;
 	vertical-align: top;
@@ -54,4 +97,10 @@
 
 .submitBtn{
 	text-align: center;
+}
+
+#uploadInfo-control{
+	background-color: #fff; 
+	border-radius: 3px;
+	padding: 2em;
 }

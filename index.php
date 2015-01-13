@@ -38,7 +38,6 @@
 <!doctype html>
 <html>
 <head>
-	<meta charset="utf-8">
 	<?php
 		require("css_common.php");
 	?>
@@ -58,15 +57,15 @@
 			<?php
 			foreach($topViewCountMon as $doc){
 				echo ('<li class="videoItem" ><div class="videoCard"><div class="video-img" ><img src="http://img.youtube.com/vi/'. $doc['id']. '/mqdefault.jpg"></div>');
-		  		echo ('<div class="video-info"><a href="video.php?vid='. $doc['_id'].'">'. $doc['title'] .'</a><span class="video-info-author">by ' .$doc['author']. '</span>');
+		  		echo ('<div class="video-info"><a href="video.php?vid='. $doc['_id'].'">'. mb_strimwidth($doc['title'], 0, 60,"...",'utf-8') .'</a><span class="video-info-author">by ' .$doc['author']. '</span>');
 	    	 		echo ('<span><i class="fa fa-eye"> '.number_format($doc['viewCount']).'</i><i class="fa fa-clock-o"> '.$doc['duration'].'</i><i class="fa fa-cloud-upload"> '.$doc['published'].'</i></span>');
-	      	   		echo ('<p class="video-content">"+"put content here"+"</p></div></div></li>');						
+	      	   		echo ('<p class="video-content">'. mb_strimwidth($doc['content'], 0, 50, '...' , 'utf-8').'</p></div></div></li>');
 			}	
 			?>	
 			</ul>
 		</div>
 		<div class="topChart">
-			<div class="topChartTitle">最新影片</div>
+			<div class="topChartTitle"></div>
 			<div id="topChart-videolist">
 				
 			</div>

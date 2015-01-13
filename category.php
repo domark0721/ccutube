@@ -4,10 +4,10 @@
 <!doctype html>
 <html>
 <head>
-	<meta charser="utf-8">
 	<?php
 		require("css_common.php");
 	?>
+	<link type="text/css" rel="stylesheet" href="css/category.css">
 	<title>Category - CCUtube</title>
 </head>
 
@@ -39,11 +39,13 @@
 	<div id="rightWrap">
 	     <ul id="howtoDisplay">
 	     	<li>order by</li>
-	     	<li><a id="orderByDuration" href="#">Duration<a></li>
-	     	<li><a id="orderByViewcount" href="#">Viewcount</a></li>
+	     	<li><a class="clicked" id="orderByDuration" href="#">Duration</a></li>
+	     	<li><a class="clicked" id="orderByViewcount" href="#">Viewcount</a></li>
+	     	<li><span class="loading" style="display:none;"><img src="img/loader.gif"></span></li>
 	     </ul>
 	      <div id="videolist-container">
-	      	<ul id="videolist">    
+	      	<ul id="videolist">
+	      		<span class="relatedLoader"><img  src="img/loaderBig.gif"></span>
 	      	</ul>
 	      </div>
 	</div>
@@ -52,7 +54,6 @@
 		require("js_common.php");
 	?>
 	<script src="js/category.js"></script>
-	<script src="js/order.js"></script>
 
 </body>
 

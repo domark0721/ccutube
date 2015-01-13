@@ -1,10 +1,12 @@
 	var holder = document.getElementById('uploadVideoArea');
-	console.log(holder);
+	// console.log(holder);
+
 	holder.ondragover = function() {
 		$("#uploadVideoArea").addClass("dragIn");
 		return false;
 	};
-	holder.ondragend = function() {
+
+	holder.ondragleave = function() {
 		$("#uploadVideoArea").removeClass("dragIn");
 		return false;
 	};
@@ -13,6 +15,7 @@
 		e.stopPropagation();
 		e.preventDefault();
 		$("#uploadVideoArea").removeClass("dragIn");
+		$("#uploadInfo-control").show(800);
 
 		var file = e.dataTransfer.files[0];
 		var fileName = file.name;
@@ -20,6 +23,7 @@
 		console.log(e.dataTransfer.files);
 		uploadFile(file);
 	};
+
 
 function uploadFile(file){
 	//overwrite file name
@@ -31,6 +35,7 @@ function uploadFile(file){
 	
 	formData.append('file',file);
 
+	//progress
 	var xhr = new XMLHttpRequest();
 	xhr.open('POST', 'api/uploadFile.php');
 	xhr.onload = function() {
@@ -42,11 +47,20 @@ function uploadFile(file){
 			progress.html(complete+"%");
 		}
 	};
+
 	xhr.onreadystatechange = function(event) {
 		if ( 4 == this.readyState ) {
-			responseText = event.currentTarget.responseText;
-			$("#videoId").val(responseText);
-			$("#videoIdShow").val(responseText);
+			// success uploaded callback
+			responseText = JSON.parse(event.currentTarget.responseText);
+			console.log(responseText);
+			$("#videoId").val(responseText[0]);
+			$("#videoIdShow").val(responseText[0]);
+
+			var imgShow ="<img src=\"" + responseText[1] + "\">";
+			$("#uploadVideoArea").hide().html(imgShow).fadeIn(1000);
+			$("#uploadVideoArea").removeClass("uploadVideoBorder");
+
+
 		}
 	};
 	xhr.send(formData);
